@@ -4,7 +4,7 @@
 <script>
 import Description from '../shared/Description';
 export default {
-  name: 'about',
+  name: 'About',
   components: {
   Description
   },

@@ -6,12 +6,12 @@ Vue.use(Router);
 const routes = [
     {
         path: '/about',
-        name: 'about',
+        name: 'About',
         component: () => import('../components/feature/About.vue')
     },
     {
         path: '/todo',
-        name: 'todo-item-list',
+        name: 'TodoItemList',
         component: TodoItemList
     },
     {

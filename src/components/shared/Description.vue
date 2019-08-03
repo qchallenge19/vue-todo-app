@@ -1,13 +1,20 @@
 <template>
     <div class="desc">
-        <div><p>{{title}}</p></div>
-        <div><p>{{contents}}</p></div>
+        <div v-if="title"><p>{{title}}</p></div>
+        <div v-if="subTitle"><p>{{subTitle}}</p></div>
+        <div v-if="contents"><p>{{contents}}</p></div>
+        <div v-if="footer"><p>{{footer}}</p></div>
     </div>
 </template>
 <script>
 export default {
-    name: 'description',
-    props: ['title','contents']
+    name: 'Description',
+    props: {
+        title: String,
+        subTitle: String,
+        contents: String,
+        footer: String
+    }
 }
 </script>
 <style scoped>

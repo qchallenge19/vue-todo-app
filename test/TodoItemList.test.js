@@ -1,4 +1,4 @@
-import { createLocalVue, mount} from '@vue/test-utils'
+import {createLocalVue, mount} from '@vue/test-utils'
 import TodoItemList from '../src/components/feature/TodoItemList';
 import Vuex from 'vuex';
 import ElementUI from 'element-ui';
@@ -34,11 +34,14 @@ describe('TodoItemList.vue', () => {
         });
 
         wrapper = mount(TodoItemList, {
+            sync: false,
             localVue,
             store
         });
     });
-
+    test('renders correctly', () => {
+        expect(wrapper.element).toMatchSnapshot();
+    });
 
     test('is a TodoListItem instance', () => {
         expect(wrapper.isVueInstance()).toBeTruthy();
@@ -47,7 +50,7 @@ describe('TodoItemList.vue', () => {
     test('should check status of add button being disabled for empty input', () => {
         const button = wrapper.find('button');
         expect(button.attributes().disabled).toBeTruthy();
-    })
+    });
 
     test('should call store action "addTodo" and "loadTodos" on `Add` button click', () => {
         const button = wrapper.find('button');
@@ -55,5 +58,5 @@ describe('TodoItemList.vue', () => {
         button.trigger('click');
         expect(actions.addTodo).toHaveBeenCalled();
         expect(actions.loadTodos).toHaveBeenCalled();
-    })
-})
+    });
+});

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About.vue renders correctly 1`] = `
+<div
+  class="desc"
+>
+  <div>
+    <p>
+      Todo App
+    </p>
+  </div>
+   
+  <!---->
+   
+  <div>
+    <p>
+      The Todo app lets user to add, update and remove the Todo items from the list dynamically. Todo list items persist
+    even after refresh of the app. Contents are being served from local JSON file.
+    </p>
+  </div>
+   
+  <!---->
+</div>
+`;
