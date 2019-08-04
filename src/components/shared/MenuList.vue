@@ -6,6 +6,7 @@
 </template>
 <script>
     export default {
-        name: 'menu-list'
+        name: 'MenuList'
     }
 </script>
+F

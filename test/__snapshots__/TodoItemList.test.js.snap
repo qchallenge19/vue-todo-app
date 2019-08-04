@@ -1,0 +1,247 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoItemList.vue renders correctly 1`] = `
+<div
+  class="todo"
+>
+  <div
+    class="todo__container"
+  >
+    <div
+      class="todo__add-task"
+    >
+      <div
+        class="el-row"
+        style="margin-left: -10px; margin-right: -10px;"
+      >
+        <div
+          class="el-col el-col-24 el-col-xs-16 el-col-sm-18 el-col-md-20 el-col-lg-21"
+          style="padding-left: 10px; padding-right: 10px;"
+        >
+          <div>
+            <div
+              class="el-input"
+            >
+              <!---->
+              <input
+                autocomplete="off"
+                class="el-input__inner"
+                type="text"
+              />
+              <!---->
+              <!---->
+              <!---->
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="el-col el-col-24 el-col-xs-8 el-col-sm-6 el-col-md-4 el-col-lg-3"
+          style="padding-left: 10px; padding-right: 10px;"
+        >
+          <div>
+            <div
+              class="el-row"
+              style="margin-left: -6px; margin-right: -6px;"
+            >
+              <div
+                class="el-col el-col-24"
+                style="padding-left: 6px; padding-right: 6px;"
+              >
+                <button
+                  class="el-button app-button el-button--primary is-disabled"
+                  disabled="disabled"
+                  type="button"
+                >
+                  <!---->
+                  <!---->
+                  <span>
+                    Add
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div>
+      <div
+        class="el-row"
+      >
+        <div
+          class="el-col el-col-24"
+        >
+          <div>
+            <div>
+              <div
+                class="el-table app-table el-table--fit el-table--scrollable-x el-table--enable-row-hover"
+              >
+                <div
+                  class="hidden-columns"
+                >
+                  <div />
+                   
+                  <div />
+                   
+                  <div />
+                </div>
+                <div
+                  class="el-table__header-wrapper"
+                >
+                  <table
+                    border="0"
+                    cellpadding="0"
+                    cellspacing="0"
+                    class="el-table__header"
+                    style="width: 315px;"
+                  >
+                    <colgroup>
+                      <col
+                        name="el-table_1_column_1"
+                        width="35"
+                      />
+                      <col
+                        name="el-table_1_column_2"
+                        width="200"
+                      />
+                      <col
+                        name="el-table_1_column_3"
+                        width="80"
+                      />
+                    </colgroup>
+                    <thead
+                      class=""
+                    >
+                      <tr
+                        class=""
+                      >
+                        <th
+                          class="el-table_1_column_1   el-table-column--selection  is-leaf"
+                          colspan="1"
+                          rowspan="1"
+                        >
+                          <div
+                            class="cell"
+                          >
+                            <label
+                              aria-disabled="true"
+                              class="el-checkbox is-disabled"
+                              role="checkbox"
+                            >
+                              <span
+                                aria-checked="mixed"
+                                class="el-checkbox__input is-disabled"
+                              >
+                                <span
+                                  class="el-checkbox__inner"
+                                />
+                                <input
+                                  aria-hidden="true"
+                                  class="el-checkbox__original"
+                                  disabled="disabled"
+                                  type="checkbox"
+                                  value=""
+                                />
+                              </span>
+                              <!---->
+                            </label>
+                          </div>
+                        </th>
+                        <th
+                          class="el-table_1_column_2  is-left   is-leaf"
+                          colspan="1"
+                          rowspan="1"
+                        >
+                          <div
+                            class="cell"
+                          />
+                        </th>
+                        <th
+                          class="el-table_1_column_3  is-right   is-leaf"
+                          colspan="1"
+                          rowspan="1"
+                        >
+                          <div
+                            class="cell"
+                          >
+                            <div
+                              class="el-input"
+                            >
+                              <!---->
+                              <input
+                                autocomplete="off"
+                                class="el-input__inner"
+                                placeholder="Search"
+                                type="text"
+                              />
+                              <!---->
+                              <!---->
+                              <!---->
+                              <!---->
+                            </div>
+                          </div>
+                        </th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+                <div
+                  class="el-table__body-wrapper is-scrolling-left"
+                >
+                  <table
+                    border="0"
+                    cellpadding="0"
+                    cellspacing="0"
+                    class="el-table__body"
+                    style="width: 315px;"
+                  >
+                    <colgroup>
+                      <col
+                        name="el-table_1_column_1"
+                        width="35"
+                      />
+                      <col
+                        name="el-table_1_column_2"
+                        width="200"
+                      />
+                      <col
+                        name="el-table_1_column_3"
+                        width="80"
+                      />
+                    </colgroup>
+                    <tbody>
+                      <!---->
+                    </tbody>
+                  </table>
+                  <div
+                    class="el-table__empty-block"
+                    style="width: 315px;"
+                  >
+                    <span
+                      class="el-table__empty-text"
+                    >
+                      No items
+                    </span>
+                  </div>
+                  <!---->
+                </div>
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+                <div
+                  class="el-table__column-resize-proxy"
+                  style="display: none;"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -3,7 +3,7 @@ import App from './App.vue';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import router from './router/router';
-import store from './store/store';
+import store from './store';
 import './plugins/element.js'
 
 Vue.config.productionTip = false;
@@ -14,4 +14,4 @@ new Vue({
   router,
   store,
   render: h => h(App),
-}).$mount('#app')
+}).$mount('#app');

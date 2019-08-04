@@ -1,13 +1,14 @@
 <template>
-  <div id="app">
-    <el-container style="height: 100vh">
-      <el-header style="height: 70px">
-        <div id="navigation">
-        <MenuList></MenuList>
-      </div></el-header>
-      <el-main style="background: #f0f8ff">
-        <div id="container">
-          <div id="errorBox" v-if="isError && routePath === '/todo'" style="text-align: center">Some error occurred, please try again.</div>
+  <div id="app" class="app-root">
+    <el-container class="app-root__container">
+      <el-header class="app-root__header">
+        <div id="nav" class="app-root__nav">
+        <menu-list></menu-list>
+      </div>
+      </el-header>
+      <el-main class="app-root__main">
+        <div id="content" class="app-root__content">
+          <error-display v-if="isError && routePath === '/todo'"></error-display>
         <router-view/>
       </div></el-main>
     </el-container>
@@ -17,17 +18,23 @@
 <script>
 
 import MenuList from "./components/shared/MenuList";
+import ErrorDisplay from './components/shared/ErrorDisplay';
+import { mapGetters  } from 'vuex';
 export default {
   name: 'app',
   components: {
-    MenuList
+    'menu-list': MenuList,
+    'error-display': ErrorDisplay
   },
   computed: {
+    ...mapGetters({
+           serverError: "isError"
+  }),
     routePath () {
       return this.$route.path;
     },
     isError () {
-      return this.$store.state.isError
+      return this.serverError;
     }
   },
   watch: {
@@ -41,43 +48,47 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  width: 100%;
-  height: 100%;
-  color: #2c3e50;
-  margin: 0;
-}
+  $alice-blue: #f0f8ff;
+  $cornflower-blue: #6495ed;
+  $cyan-blue: #2c3e50;
+  $red-orange-approx: #f44336;
+  $white: #fff;
 
-#navigation {
-    padding: 15px;
-  a {
-    color: #6495ed;
-    padding: 5px;
-    &.router-link-active {
-      color: blue;
-    }
-    text-decoration: none;
+  .app-root {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    height: 100%;
+    color: $cyan-blue;
+    margin: 0;
   }
-}
+  .app-root__container {
+    height: 100vh;
+  }
+  .app-root_header {
+    height: 70px;
+  }
+  .app-root__main {
+    background-color: $alice-blue;
+  }
+  .app-root__nav {
+    padding: 15px;
+    a {
+      color: $cornflower-blue;
+      padding: 5px;
+      &.router-link-active {
+        color: blue;
+      }
+      text-decoration: none;
+    }
+  }
+  .app-root__content {
+    padding-top: 10px;
+  }
 
-#container {
-  padding-top: 10px;
-}
-
-#errorBox {
-  background-color: rgb(244, 67, 54);
-  border-radius: 5px;
-  color: #fff;
-  height: 20px;
-  margin: auto;
-  width: 90%;
-}
-
-body {
+  body {
     height: 100%;
     margin: 0;
-}
+  }
 </style>
