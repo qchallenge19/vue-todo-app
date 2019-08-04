@@ -1,12 +1,12 @@
 <template>
-  <Description v-bind:contents="data.description" v-bind:title="data.title"></Description>
+  <app-card v-bind:contents="data.description" v-bind:title="data.title"></app-card>
 </template>
 <script>
-import Description from '../shared/Description';
+import AppCard from '../shared/AppCard';
 export default {
   name: 'About',
   components: {
-  Description
+    'app-card': AppCard
   },
   data: () => {
     return {

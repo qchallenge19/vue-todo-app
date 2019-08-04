@@ -7,7 +7,8 @@
                         <el-input v-model="newTodo"></el-input>
                     </div></el-col>
                     <el-col :xs="8" :sm="6" :md="4" :lg="3"><div>
-                        <el-button type="primary" @click="addTodo" :disabled="newTodo.length === 0" style="width: 100%">Add</el-button></div>
+                        <app-button v-bind:isDisabled="newTodo.length === 0" v-bind:btn-text="'Add'" v-on:btn-clicked="addTodo"
+                        ></app-button></div>
                     </el-col>
                 </el-row>
             </div>
@@ -15,8 +16,8 @@
                 <el-row>
                     <el-col :span="24">
                         <div>
-                            <AppTable v-bind:tableData="tableData" v-on:row-select="handleTodoUpdate" v-on:row-delete="handleDelete"
-                            ></AppTable>
+                            <app-table v-bind:tableData="tableData" v-on:row-select="handleTodoUpdate" v-on:row-delete="handleDelete"
+                            ></app-table>
                         </div>
                     </el-col>
                 </el-row>
@@ -28,10 +29,12 @@
 <script>
     import { mapActions, mapGetters  } from 'vuex';
     import AppTable from "../shared/AppTable";
+    import AppButton from "../shared/AppButton";
     export default {
         name: 'TodoItemList',
         components: {
-            AppTable
+            'app-table': AppTable,
+            'app-button': AppButton
         },
         data() {
             return {
@@ -81,37 +84,43 @@
     }
 </script>
 <style lang="scss" scoped>
-    $col-white: #fff;
-    $col-cornflower-blue: #a0cfff;
-    $col-black: #000;
+$col-white: #fff;
+$col-cornflower-blue: #a0cfff;
+$col-black: #000;
 
-    .todo {
-      margin-top: 20px;
-    }
+.todo {
+  margin-top: 20px;
+}
 
-    .todo__add-task {
-      margin: auto;
-      width: 90%;
-    }
+.todo__add-task {
+  margin: auto;
+  width: 90%;
+}
 
-    .todo__container {
-      background: $col-white;
-      border: 1px solid $col-cornflower-blue;
-      border-radius: 5px;
-      color: $col-black;
-      float: none;
-      margin: auto;
-      padding-top: 25px;
-      width: 90%;
-    }
+.todo__container {
+  background: $col-white;
+  border: 1px solid $col-cornflower-blue;
+  border-radius: 5px;
+  color: $col-black;
+  float: none;
+  margin: auto;
+  padding-top: 25px;
+  width: 90%;
+}
 </style>
 <style lang="scss">
-    $col-solitude: #ebeef5;
-    th:first-child {
-        visibility: hidden;
-    }
+$col-solitude: #ebeef5;
 
-    tr:first-child td:first-child {
-        border-top: 1px solid $col-solitude;
+th {
+  &:first-child {
+    visibility: hidden;
+  }
+}
+
+td {
+  &:first-child {
+    border-top: 1px solid $col-solitude;
     }
+}
+
 </style>

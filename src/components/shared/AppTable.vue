@@ -23,7 +23,8 @@
                 </template>
                 <!-- eslint-disable-next-line vue/no-unused-vars -->
                 <template slot-scope="scope">
-                    <span class="app-table_del-btn" v-on:click="$emit('row-delete', filterTableData[scope.$index])"></span>
+                    <span class="app-table_del-btn"
+                          v-on:click="$emit('row-delete', filterTableData[scope.$index])"></span>
                 </template>
             </el-table-column>
         </el-table>
@@ -43,18 +44,27 @@
                 search: '',
             }
         },
-        updated () {
+        updated() {
             let todos = this.tableData;
             todos.forEach(todo => {
                 this.$refs.todoTable.toggleRowSelection(todo, todo.completed);
             });
         },
         computed: {
+            /**
+             * method returns filtered data based on input entered in search input field
+             * @returns {*}
+             */
             filterTableData() {
                 return this.tableData.filter(data => !this.search || data.description.toLowerCase().includes(this.search.toLowerCase()));
             }
         },
         methods: {
+            /**
+             * method emits an event on row selection which is handled by parent component
+             * @param selection
+             * @param row
+             */
             handleRowSelection(selection, row) {
                 this.$emit('row-select', row);
             }
@@ -62,41 +72,44 @@
     }
 </script>
 <style lang="scss" scoped>
-    $col-dodger-blue: #409EFF;
-    $col-cornflower-blue: #a0cfff;
-    $col-solitude: #ebeef5;
+$col-dodger-blue: #409eff;
+$col-cornflower-blue: #a0cfff;
 
-    .app-table {
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
-        text-align: center;
-        width: 100%;
-    }
+.app-table {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  text-align: center;
+  width: 100%;
+}
 
+.app-table_del-btn {
+  align-content: center;
+  bottom: 0;
+  color: $col-cornflower-blue;
+  display: none;
+  font-size: 30px;
+  height: 40px;
+  margin: auto 0;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  transition: color .2s ease-out;
+  width: 40px;
+
+  &::after {
+    content: '×';
+  }
+
+  &:hover {
+    color: $col-dodger-blue;
+  }
+}
+
+tr {
+  &:hover {
     .app-table_del-btn {
-        align-content: center;
-        bottom: 0;
-        color: $col-cornflower-blue;
-        display: none;
-        font-size: 30px;
-        height: 40px;
-        margin: auto 0;
-        position: absolute;
-        right: 15px;
-        top: 15px;
-        transition: color .2s ease-out;
-        width: 40px;
+      display: block;
     }
-
-    .app-table_del-btn:hover {
-        color: $col-dodger-blue;
-    }
-
-    .app-table_del-btn:after {
-        content: '×';
-    }
-
-    tr:hover .app-table_del-btn {
-        display: block;
-    }
+  }
+}
 </style>

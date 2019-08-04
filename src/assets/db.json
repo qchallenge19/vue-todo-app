@@ -1,19 +1,14 @@
 {
   "todos": [
     {
-      "description": "Adding a new task to fix bugs raised after feedback",
+      "description": "Task is completed!",
+      "completed": false,
+      "id": "132502087"
+    },
+    {
+      "description": "Please commit the changes",
       "completed": true,
-      "id": "458182729"
-    },
-    {
-      "description": "Refactor is almost done!",
-      "completed": false,
-      "id": "886365878"
-    },
-    {
-      "description": "All tasks have been completed",
-      "completed": false,
-      "id": "902770817"
+      "id": "863479823"
     }
   ]
 }

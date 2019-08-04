@@ -1,21 +1,28 @@
 <template>
-    <div id="displayError" class="errorBox"><p>Some error occurred, please try again.</p></div>
+    <div id="displayError" class="error"><p>{{errorText}}</p></div>
 </template>
 <script>
     export default {
-        name: 'ErrorDisplay'
+        name: 'ErrorDisplay',
+        props: {
+            errorText: {
+                type: String,
+                default: 'Some error occurred, please try again.'
+            }
+        }
     }
 </script>
 <style lang="scss" scoped>
-    $red-orange: #F44336;
-    $white: #fff;
-    .errorBox {
-        background-color: $red-orange;
-        border-radius: 5px;
-        color: $white;
-        height: 20px;
-        margin: auto;
-        text-align: center;
-        width: 90%;
-    }
+$red-orange: #f44336;
+$white: #fff;
+
+.error {
+  background-color: $red-orange;
+  border-radius: 5px;
+  color: $white;
+  height: 20px;
+  margin: auto;
+  text-align: center;
+  width: 90%;
+}
 </style>

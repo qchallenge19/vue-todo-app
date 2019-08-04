@@ -3,12 +3,12 @@
     <el-container class="app-root__container">
       <el-header class="app-root__header">
         <div id="nav" class="app-root__nav">
-        <MenuList></MenuList>
+        <menu-list></menu-list>
       </div>
       </el-header>
       <el-main class="app-root__main">
         <div id="content" class="app-root__content">
-          <ErrorDisplay v-if="isError && routePath === '/todo'"></ErrorDisplay>
+          <error-display v-if="isError && routePath === '/todo'"></error-display>
         <router-view/>
       </div></el-main>
     </el-container>
@@ -23,8 +23,8 @@ import { mapGetters  } from 'vuex';
 export default {
   name: 'app',
   components: {
-    MenuList,
-    ErrorDisplay
+    'menu-list': MenuList,
+    'error-display': ErrorDisplay
   },
   computed: {
     ...mapGetters({
